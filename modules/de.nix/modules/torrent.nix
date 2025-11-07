@@ -1,5 +1,10 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [ qbittorrent-enhanced ];
+
+  xdg.autostart.entries = [
+    "${pkgs.qbittorrent-enhanced}/share/applications/org.qbittorrent.qBittorrent.desktop"
+  ];
+
   systemd.user = {
     services.peer-ban-helper = {
       Install.WantedBy = [ "default.target" ];

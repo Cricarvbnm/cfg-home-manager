@@ -11,4 +11,5 @@
   ];
 
   home.packages = with pkgs; [ loupe ];
+  xdg.autostart.enable = true;
 }
