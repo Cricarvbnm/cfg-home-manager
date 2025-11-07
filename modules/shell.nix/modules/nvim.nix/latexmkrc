@@ -1,0 +1,9 @@
+$out_dir = './build';
+
+$pdflatex = 'xelatex -synctex=1 -interaction=nonstopmode';
+
+# Do not view temporary files
+$pvc_view_file_via_temporary = 0;
+
+# 频繁参考文献修改
+$always_run_biber = 1;

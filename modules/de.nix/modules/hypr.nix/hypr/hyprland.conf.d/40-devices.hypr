@@ -1,0 +1,4 @@
+device {
+    name = 'asup1205:00-093a:2008-touchpad'
+    sensitivity = 0.3
+}

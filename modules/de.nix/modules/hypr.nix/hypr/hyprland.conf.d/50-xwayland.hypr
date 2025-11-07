@@ -1,0 +1,11 @@
+env = XCURSOR_SIZE,24
+env = HYPRCURSOR_SIZE,24
+
+xwayland {
+  force_zero_scaling = true
+}
+
+env = GDK_SCALE,2
+
+windowrulev2 = noinitialfocus,xwayland:1 # for JetBrains
+

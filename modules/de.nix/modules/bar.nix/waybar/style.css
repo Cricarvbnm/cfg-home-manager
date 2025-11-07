@@ -1,0 +1,176 @@
+@define-color crust		#181926;
+@define-color mantle		#1e2030;
+@define-color base		#24273a;
+
+@define-color surface0	#363a4f;
+@define-color surface1	#494d64;
+@define-color surface2	#5b6078;
+
+@define-color overlay0	#6e738d;
+@define-color overlay1	#8087a2;
+@define-color overlay2	#939ab7;
+
+@define-color subtext0	#a5adcb;
+@define-color subtext1	#b8c0e0;
+@define-color text		#cad3f5;
+
+@define-color lavender	#b7bdf8;
+@define-color blue		#8aadf4;
+@define-color sapphire	#7dc4e4;
+@define-color sky		#91d7e3;
+@define-color teal		#8bd5ca;
+@define-color green		#a6da95;
+@define-color yellow		#eed49f;
+@define-color peach		#f5a97f;
+@define-color maroon		#ee99a0;
+@define-color red		#ed8796;
+@define-color mauve		#c6a0f6;
+@define-color pink		#f5bde6;
+@define-color flamingo	#f0c6c6;
+@define-color rosewater	#f4dbd6;
+
+* {
+  font-family: "monospace";
+  font-weight: bold;
+  min-height: 0;
+}
+/* window */
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background: transparent;
+  border-radius: 8px;
+}
+window#waybar.hidden {
+  opacity: 0.2;
+}
+window#waybar.empty,
+window#waybar.empty #window {
+  background-color: transparent;
+  padding: 0px;
+  border: 0px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  /* background: @theme_base_color;  */
+  background: @base;
+  border: 0.5px solid @overlay0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 4px;
+  padding-left: 4px;
+  border-radius: 10px;
+}
+
+/* partition */
+.modules-left,
+.modules-right {
+  border: 1px solid @blue;
+}
+
+/* taskbar & workspaces */
+#taskbar button,
+#workspaces button {
+  color: @overlay1;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 9px;
+  padding-left: 4px;
+  padding-right: 4px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+  border-radius: 10px;
+  color: @peach;
+  background-color: @surface0;
+  padding-left: 2px;
+  padding-right: 2px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.persistent {
+  color: @surface1;
+  border-radius: 10px;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+  color: @mauve;
+  border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.urgent {
+  color: @red;
+  border-radius: 0px;
+}
+
+/* others */
+#window {
+  color: @mauve;
+}
+
+#network {
+  color: @teal;
+}
+#network.disconnected,
+#network.disabled {
+  color: @text;
+}
+
+#clock {
+  color: @yellow;
+}
+
+#cpu {
+  color: @green;
+}
+
+#memory {
+  color: @sky;
+}
+
+#disk {
+  color: @sapphire;
+}
+
+#temperature {
+  color: @teal;
+}
+#temperature.critical {
+  color: @red;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#bluetooth {
+  color: @blue;
+}
+#bluetooth.disabled {
+  color: @red;
+}
+
+#pulseaudio {
+  color: @sapphire;
+}
+#pulseaudio.bluetooth {
+  color: @blue;
+}
+#pulseaudio.muted {
+  color: @red;
+}

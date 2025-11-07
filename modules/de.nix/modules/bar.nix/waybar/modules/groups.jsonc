@@ -1,0 +1,30 @@
+{
+	"include": [
+		"$HOME/.config/waybar/modules/separators.jsonc",
+		"$HOME/.config/waybar/modules/common.jsonc"
+	],
+
+	"group/mobo_drawer": {
+		"orientation": "inherit",
+		"modules": ["cpu", "custom/separator#dot-line", "memory"]
+	},
+
+	"group/temperature": {
+		"orientation": "inherit",
+		"modules": ["temperature#cpu"]
+	},
+
+	"group/power": {
+		"orientation": "inherit",
+		"modules": ["battery"]
+	},
+
+	"group/audio": {
+		"orientation": "inherit",
+		"modules": ["pulseaudio"]
+	},
+
+	"group/networks": {
+		"modules": ["network#eth", "network#eth2", "network#wifi"]
+	}
+}

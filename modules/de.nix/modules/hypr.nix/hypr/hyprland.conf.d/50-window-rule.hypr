@@ -1,0 +1,10 @@
+# Float Windows
+
+windowrule = float,title:^(CopyQ)$
+windowrule = float,class:^(org.kde.kcalc)$
+windowrule = float,title:^(重命名 .+)$,class:^([Tt]hunar)$
+windowrule = float,class:^(clash-verge)$
+windowrule = float,class:^(com.github.hluk.copyq)$
+
+# Ignore Maximize
+windowrule = suppressevent maximize, class:.*

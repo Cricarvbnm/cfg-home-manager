@@ -1,0 +1,93 @@
+bind = CTRL ALT, delete, exit,
+bind = SUPER ALT, delete, exec, reboot
+bind = SUPER, semicolon, exec, hyprlock
+
+# Window
+bind = SUPER, S, togglesplit, # dwindle
+bind = SUPER, F, togglefloating,
+
+bind = SUPER, P, pseudo, # dwindle
+bind = SUPER, X, fullscreen
+bind = , mouse:275, fullscreen
+
+bind = SUPER, C, killactive,
+bind = , mouse:276, killactive,
+
+bind = SUPER, H, movefocus, l
+bind = SUPER, L, movefocus, r
+bind = SUPER, K, movefocus, u
+bind = SUPER, J, movefocus, d
+
+bind = SUPER SHIFT, H, movewindow, l
+bind = SUPER SHIFT, L, movewindow, r
+bind = SUPER SHIFT, K, movewindow, u
+bind = SUPER SHIFT, J, movewindow, d
+bindm = SUPER, mouse:272, movewindow
+bindm = SUPER, mouse:273, resizewindow
+
+bind = SUPER, TAB, cyclenext
+bind = SUPER SHIFT, TAB, focusurgentorlast
+
+# Workspace
+bind = SUPER, 1, workspace, 1
+bind = SUPER, 2, workspace, 2
+bind = SUPER, 3, workspace, 3
+bind = SUPER, 4, workspace, 4
+bind = SUPER, 5, workspace, 5
+bind = SUPER, 6, workspace, 6
+bind = SUPER, 7, workspace, 7
+bind = SUPER, 8, workspace, 8
+bind = SUPER, 9, workspace, 9
+bind = SUPER ALT, Z, togglespecialworkspace, magic
+bind = SUPER, 0, workspace, emptym
+
+bind = SUPER, LEFT, workspace, m-1
+bind = SUPER, RIGHT, workspace, m+1
+
+bind = SUPER SHIFT, 1, movetoworkspace, 1
+bind = SUPER SHIFT, 2, movetoworkspace, 2
+bind = SUPER SHIFT, 3, movetoworkspace, 3
+bind = SUPER SHIFT, 4, movetoworkspace, 4
+bind = SUPER SHIFT, 5, movetoworkspace, 5
+bind = SUPER SHIFT, 6, movetoworkspace, 6
+bind = SUPER SHIFT, 7, movetoworkspace, 7
+bind = SUPER SHIFT, 8, movetoworkspace, 8
+bind = SUPER SHIFT, 9, movetoworkspace, 9
+bind = SUPER SHIFT, 0, movetoworkspace, emptym
+
+bind = SUPER SHIFT, LEFT, movetoworkspace, m-1
+bind = SUPER SHIFT, RIGHT, movetoworkspace, m+1
+
+bind = SUPER, Z, movetoworkspacesilent, special:magic
+
+bind = SUPER, D, exec, $scriptDir/privacy-desktop
+
+# Media
+bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindel = ,XF86MonBrightnessUp, exec, brightnessctl s 5%+
+bindel = ,XF86MonBrightnessDown, exec, brightnessctl s 5%-
+
+# Notification
+bind = SUPER, N, exec, swaync-client --toggle-panel
+bind = SUPER CTRL, N, exec, swaync-client --close-latest
+bind = SUPER CTRL SHIFT, N, exec, swaync-client --close-all
+
+# Screenshot
+$hyprshot = hyprshot --output-folder $HOME/Pictures/screenshots
+
+bind = , print, exec, $hyprshot -m output
+bind = SUPER, print, exec, $hyprshot -m region
+
+# Start App
+bind = SUPER, return, exec, kitty
+bind = SUPER, E, exec, thunar
+bind = SUPER SHIFT, E, exec, thunar '$HOME/Desktop'
+bind = SUPER, B, exec, firefox
+bind = SUPER, R, exec, wofi --show drun --insensitive --matching=fuzzy
+bind = SUPER ALT, R, exec, wofi --show run --insensitive --matching=fuzzy
+bind = SUPER, T, exec, qbittorrent
+bind = SUPER, V, exec, copyq show
+
