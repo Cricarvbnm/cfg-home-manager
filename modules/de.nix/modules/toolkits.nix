@@ -23,8 +23,8 @@
     };
 
     iconTheme = {
-      name = "Tela circle dark";
-      package = pkgs.tela-circle-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
   };
 
