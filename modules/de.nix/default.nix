@@ -8,6 +8,7 @@
     ./modules/dev.nix
     ./modules/browser.nix
     ./modules/toolkits.nix
+    ./modules/office.nix
   ];
 
   home.packages = with pkgs; [ loupe ];
