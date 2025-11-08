@@ -10,9 +10,8 @@
   };
 
   xdg.configFile = {
-    "kitty/current-theme.conf".source =
-      ./kitty/.config/kitty/current-theme.conf;
+    "kitty/current-theme.conf".source = ./kitty/current-theme.conf;
     "kitty/kitty-custom.conf".source =
-      config.lib.file.mkOutOfStoreSymlink ./kitty/.config/kitty/kitty.conf;
+      config.lib.file.mkOutOfStoreSymlink ./kitty/kitty.conf;
   };
 }
