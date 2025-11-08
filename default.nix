@@ -1,6 +1,10 @@
 { ... }: {
   imports = [ <home-manager/nixos> ];
 
+  nixpkgs.overlays = [
+    (self: super: { tieba-sign = super.callPackage ./pkgs/tieba-sign.nix { }; })
+  ];
+
   home-manager = {
     useGlobalPkgs = true;
     sharedModules = [
