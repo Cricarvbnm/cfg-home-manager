@@ -3,6 +3,7 @@
     ./modules/hypr.nix
 
     ./modules/torrent.nix
+    ./modules/idle.nix
     ./modules/terminal.nix
     ./modules/video.nix
     ./modules/dev.nix
