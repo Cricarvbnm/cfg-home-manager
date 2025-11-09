@@ -36,7 +36,7 @@
         home = {
           file.".icon".source =
             "/storage/General/Pictures/Heads/00028-2425649580-high resolution.png";
-          pacakges = with pkgs; [ save-music ];
+          packages = with pkgs; [ save-music ];
         };
       };
     };
