@@ -1,4 +1,0 @@
-exec-once = xdg-launch waybar
-exec-once = xdg-launch waybar-bot
-
-exec-once = nm-applet
