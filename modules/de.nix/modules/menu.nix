@@ -1,1 +1,1 @@
-{ ... }: { programs.wofi = { enable = true; }; }
+{ ... }: { programs.fuzzel = { enable = true; }; }
