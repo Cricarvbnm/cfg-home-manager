@@ -2,6 +2,7 @@
   imports = [
     ./modules/hypr.nix
 
+    ./modules/wallpaper.nix
     ./modules/lock.nix
     ./modules/torrent.nix
     ./modules/idle.nix
