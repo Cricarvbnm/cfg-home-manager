@@ -22,6 +22,7 @@
 
       source = $configDir/*.hypr
     '';
+    plugins = with pkgs.hyprlandPlugins; [ hyprexpo ];
   };
 
   xdg.configFile."hypr/hyprland.conf.d".source =
