@@ -9,6 +9,8 @@
     ../browser.nix
     ../torrent.nix
     ../terminal.nix
+    ../lock.nix
+    ../wallpaper.nix
   ];
 
   home.packages = with pkgs; [ hyprshot xdg-launch networkmanagerapplet ];
