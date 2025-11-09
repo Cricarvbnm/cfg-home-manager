@@ -46,13 +46,7 @@
         };
     };
   };
-  # Lock
-  programs.hyprlock = {
-    enable = true;
-    extraConfig = ''
-      source = ${config.xdg.configHome}/hypr/hyprlock/current.conf
-    '';
-  };
-  xdg.configFile."hypr/hyprlock/current.conf".source =
-    config.lib.file.mkOutOfStoreSymlink ./hypr/hyprlock.conf;
+
+  mine.de.idle.display = status:
+    "hyprctl dispatch dpms ${if status then "on" else "off"}";
 }
