@@ -13,7 +13,7 @@
 
     timers.tieba-sign = {
       Install.WantedBy = [ "timers.target" ];
-      Timer.OnCalendar = "*:00:00";
+      Timer.OnCalendar = "hourly";
     };
   };
 }
