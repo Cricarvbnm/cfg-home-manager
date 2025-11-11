@@ -7,7 +7,8 @@
     gtk.enable = true;
   };
 
-  gtk = {
+  gtk = (let fcitxConfig = { gtk-im-module = "fcitx"; };
+  in {
     enable = true;
 
     font = {
@@ -26,7 +27,12 @@
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
-  };
+
+    # Fcitx in Xwayland
+    gtk4.extraConfig = fcitxConfig;
+    gtk3.extraConfig = fcitxConfig;
+    gtk2.extraConfig = ''gtk-im-module="fcitx"'';
+  });
 
   home.packages = with pkgs; [ qt6ct catppuccin-kvantum ];
   qt = {
