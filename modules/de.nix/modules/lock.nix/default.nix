@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, ... }: {
   programs.hyprlock = {
     enable = true;
     extraConfig = ''
