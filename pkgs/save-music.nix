@@ -12,7 +12,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ makeWrapper ];
-  buildInputs = with pkgs; [ curl kid3-cli ffmpeg-normalize bash ];
+  buildInputs = with pkgs; [ curl kid3-cli ffmpeg-normalize ffmpeg bash ];
 
   installPhase = ''
     mkdir -p $out/{bin,share}
