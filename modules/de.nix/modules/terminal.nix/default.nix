@@ -14,4 +14,6 @@
     "kitty/kitty-custom.conf".source =
       config.lib.file.mkOutOfStoreSymlink ./kitty/kitty.conf;
   };
+
+  home.sessionVariables = { TERMINAL = "kitty"; };
 }
