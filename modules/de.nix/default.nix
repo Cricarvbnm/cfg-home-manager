@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./modules/hypr.nix
+    # ./modules/hypr.nix
     ./modules/niri.nix
 
     ./modules/wallpaper.nix
