@@ -31,7 +31,7 @@
 
       alec = {
         imports =
-          [ ./modules/system.nix/modules/tieba-sign.nix ./modules/de.nix ];
+          [ ./modules/system.nix/tieba-sign.nix ./modules/de.nix ];
 
         home = {
           file.".icon".source =
