@@ -1,18 +1,18 @@
 { pkgs, ... }: {
   imports = [
-    # ./modules/hypr.nix
-    ./modules/niri.nix
+    # ./hypr.nix
+    ./niri.nix
 
-    ./modules/wallpaper.nix
-    ./modules/lock.nix
-    ./modules/torrent.nix
-    ./modules/idle.nix
-    ./modules/terminal.nix
-    ./modules/video.nix
-    ./modules/dev.nix
-    ./modules/browser.nix
-    ./modules/toolkits.nix
-    ./modules/office.nix
+    ./wallpaper.nix
+    ./lock.nix
+    ./torrent.nix
+    ./idle.nix
+    ./terminal.nix
+    ./video.nix
+    ./dev.nix
+    ./browser.nix
+    ./toolkits.nix
+    ./office.nix
   ];
 
   xdg.autostart.enable = true;
