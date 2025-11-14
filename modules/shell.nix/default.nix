@@ -1,7 +1,7 @@
 { config, lib, ... }:
 let inherit (lib) mkAfter;
 in {
-  imports = [ ./modules/nvim.nix ];
+  imports = [ ./nvim.nix ];
 
   programs.zsh = {
     enable = true;
