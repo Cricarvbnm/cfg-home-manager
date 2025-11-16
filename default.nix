@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [ <home-manager/nixos> ];
 
   nixpkgs.overlays = [
@@ -16,6 +16,8 @@
         }) filenames);
 
       in mapAttrs (k: v: super.callPackage v { }) nameFileSet))
+
+    (self: super: { inherit (inputs.nixpkgs-stable) ffmpeg-normalize; })
   ];
 
   home-manager = {
@@ -30,8 +32,7 @@
       root = { };
 
       alec = {
-        imports =
-          [ ./modules/system.nix/tieba-sign.nix ./modules/de.nix ];
+        imports = [ ./modules/system.nix/tieba-sign.nix ./modules/de.nix ];
 
         home = {
           file.".icon".source =

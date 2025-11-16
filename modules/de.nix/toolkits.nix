@@ -34,7 +34,7 @@
     gtk2.extraConfig = ''gtk-im-module="fcitx"'';
   });
 
-  home.packages = with pkgs; [ qt6ct catppuccin-kvantum ];
+  home.packages = with pkgs; [ qt6Packages.qt6ct catppuccin-kvantum ];
   qt = {
     enable = true;
     platformTheme.name = "qtct";
