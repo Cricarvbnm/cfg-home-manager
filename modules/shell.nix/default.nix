@@ -6,7 +6,7 @@ in {
   programs.zsh = {
     enable = true;
 
-    dotDir = "${config.xdg.configHome}/zsh";
+    dotDir = ".config/zsh";
     history.path = "${config.xdg.stateHome}/zsh/history";
 
     initContent = mkAfter "bindkey -v";
