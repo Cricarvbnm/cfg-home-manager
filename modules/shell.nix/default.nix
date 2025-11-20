@@ -1,14 +1,53 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 let inherit (lib) mkAfter;
 in {
-  imports = [ ./nvim.nix ];
+  imports = [ ./nvim.nix ./starship.nix ];
 
-  programs.zsh = {
-    enable = true;
+  home.packages = with pkgs; [
+    bat
+    file
+    htop
+    iftop
+    nethogs
+    lsof
+    tree
+    aria2
+    curl
+    nix-output-monitor
+    ffmpeg-headless
+  ];
 
-    dotDir = ".config/zsh";
-    history.path = "${config.xdg.stateHome}/zsh/history";
+  programs = {
+    zsh = {
+      enable = true;
 
-    initContent = mkAfter "bindkey -v";
+      dotDir = ".config/zsh";
+      initContent = mkAfter "bindkey -v";
+
+      history = {
+        path = "${config.xdg.stateHome}/zsh/history";
+        expireDuplicatesFirst = true;
+        extended = true;
+        findNoDups = true;
+        share = false;
+      };
+
+      syntaxHighlighting = {
+        enable = true;
+        highlighters = [ "main" "brackets" ];
+      };
+
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "sudo" ];
+      };
+    };
+
+    zoxide.enable = true;
+  };
+
+  home.shellAliases = {
+    nd = "nix profile diff-closures --profile /nix/var/nix/profiles/system";
+    npi = "nix path-info -r /nix/var/nix/profiles/system";
   };
 }
