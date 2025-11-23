@@ -4,7 +4,6 @@
     ./niri.nix
 
     ./wallpaper.nix
-    ./lock.nix
     ./torrent.nix
     ./idle.nix
     ./terminal.nix
@@ -16,7 +15,7 @@
   ];
 
   xdg.autostart.enable = true;
-  home.packages = with pkgs; [ loupe ];
+  home.packages = with pkgs; [ loupe baobab bleachbit ];
 
   programs.obs-studio = {
     enable = true;
