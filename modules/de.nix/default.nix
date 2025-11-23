@@ -15,7 +15,7 @@
   ];
 
   xdg.autostart.enable = true;
-  home.packages = with pkgs; [ loupe baobab bleachbit ];
+  home.packages = with pkgs; [ loupe baobab bleachbit qq wechat ];
 
   programs.obs-studio = {
     enable = true;
