@@ -1,45 +1,16 @@
-{ pkgs, inputs, ... }: {
-  imports = [ <home-manager/nixos> ];
+# Home-Manager as a nixos module
+# This is a nixos module
 
-  nixpkgs.overlays = [
-    # Include all from ./pkgs
-    (self: super:
-      (let
-        inherit (builtins)
-          readDir attrNames listToAttrs mapAttrs replaceStrings;
-
-        files = readDir ./pkgs;
-        filenames = attrNames files;
-        nameFileSet = listToAttrs (map (v: {
-          name = replaceStrings [ ".nix" ] [ "" ] v;
-          value = ./pkgs/${v};
-        }) filenames);
-
-      in mapAttrs (k: v: super.callPackage v { }) nameFileSet))
-
-    (self: super: { inherit (inputs.nixpkgs-stable) ffmpeg-normalize; })
-  ];
+{ pkgs, ... }: {
+  imports = [ <home-manager/nixos> ./pkgs.nix ];
 
   home-manager = {
     useGlobalPkgs = true;
-    sharedModules = [
-      { home.stateVersion = "25.05"; }
-      ./modules/system.nix
-      ./modules/shell.nix
-    ];
+    sharedModules = [ ./shared.nix ];
 
     users = {
       root = { };
-
-      alec = {
-        imports = [ ./modules/system.nix/tieba-sign.nix ./modules/de.nix ];
-
-        home = {
-          file.".icon".source =
-            "/storage/General/Pictures/Heads/00028-2425649580-high resolution.png";
-          packages = with pkgs; [ save-music ];
-        };
-      };
+      alec = import ./users/alec.nix { inherit pkgs; };
     };
   };
 }
