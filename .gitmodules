@@ -1,0 +1,24 @@
+[submodule "modules/de.nix/hypr.nix"]
+	path = modules/de.nix/hypr.nix
+	url = git@github.com:Cricarvbnm/cfg-hyprland.git
+[submodule "modules/de.nix/bar.nix/waybar"]
+	path = modules/de.nix/bar.nix/waybar
+	url = git@github.com:Cricarvbnm/cfg-waybar.git
+[submodule "modules/de.nix/niri.nix/niri"]
+	path = modules/de.nix/niri.nix/niri
+	url = git@github.com:Cricarvbnm/cfg-niri.git
+[submodule "modules/de.nix/video.nix/mpv"]
+	path = modules/de.nix/video.nix/mpv
+	url = git@github.com:Cricarvbnm/cfg-mpv.git
+[submodule "modules/de.nix/notification.nix/swaync"]
+	path = modules/de.nix/notification.nix/swaync
+	url = git@github.com:Cricarvbnm/cfg-swaync.git
+[submodule "modules/shell.nix/nvim.nix/nvim"]
+	path = modules/shell.nix/nvim.nix/nvim
+	url = git@github.com:Cricarvbnm/cfg-AstroNvim.git
+[submodule "modules/de.nix/menu.nix/fuzzel"]
+	path = modules/de.nix/menu.nix/fuzzel
+	url = git@github.com:catppuccin/fuzzel.git
+[submodule "modules/de.nix/terminal.nix/kitty"]
+	path = modules/de.nix/terminal.nix/kitty
+	url = git@github.com:Cricarvbnm/cfg-kitty.git
