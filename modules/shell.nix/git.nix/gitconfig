@@ -1,0 +1,20 @@
+[init]
+    defaultBranch = "main"
+
+[user]
+    email = "alecvbnm@outlook.com"
+    name = "Alec"
+
+[alias]
+    a = "add"
+    aa = "add --all"
+
+    s = "status --short --branch"
+    sl = "status"
+
+    c = "commit"
+    ca = "commit --all"
+    cu = "commit --amend"
+
+[pull]
+    rebase = true
