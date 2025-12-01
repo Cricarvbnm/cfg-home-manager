@@ -12,11 +12,15 @@ in {
     ./shared.nix
     ./pkgs.nix
 
+    ./hosts/generic-linux/nvidia.nix
+
     ./users/alec.nix # Personal Configuration
   ];
 
   _module.args = { inherit inputs; };
 
   nixpkgs.config.allowUnfree = true;
+  targets.genericLinux.enable = true;
+
   programs.home-manager.enable = true;
 }
