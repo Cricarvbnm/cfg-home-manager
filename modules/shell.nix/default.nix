@@ -1,19 +1,30 @@
 { config, lib, pkgs, ... }:
 let inherit (lib) mkAfter;
 in {
-  imports = [ ./nvim.nix ./starship.nix ./git.nix ./dev.nix ];
+  imports = [
+    ./coreutils.nix
+    ./rsync.nix
+    ./nvim.nix
+    ./starship.nix
+    ./git.nix
+    ./dev.nix
+    ./nix-output-monitor.nix
+  ];
 
   home.packages = with pkgs; [
-    bat
+    fd # finder
+    fzf # finder
+    duf # df
+    dust # du
+    gdu # du with console
+
     file
     htop
     iftop
     nethogs
     lsof
-    tree
     aria2
     curl
-    nix-output-monitor
     ffmpeg-headless
   ];
 
