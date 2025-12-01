@@ -45,9 +45,4 @@ in {
 
     zoxide.enable = true;
   };
-
-  home.shellAliases = {
-    nd = "nix profile diff-closures --profile /nix/var/nix/profiles/system";
-    npi = "nix path-info -r /nix/var/nix/profiles/system";
-  };
 }
