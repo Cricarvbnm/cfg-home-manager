@@ -9,6 +9,7 @@ in {
     ./git.nix
     ./dev.nix
     ./nix-output-monitor.nix
+    ./yazi.nix
   ];
 
   home.packages = with pkgs; [
