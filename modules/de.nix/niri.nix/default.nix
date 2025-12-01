@@ -8,6 +8,7 @@
     ../menu.nix
     ../polkit.nix
     ../wallpaper.nix
+    ../logout.nix
   ];
 
   xdg.configFile.niri.source = config.lib.file.mkOutOfStoreSymlink ./niri;

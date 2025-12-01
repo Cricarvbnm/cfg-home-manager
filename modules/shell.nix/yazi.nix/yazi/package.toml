@@ -33,6 +33,11 @@ use = "Rolv-Apneseth/starship"
 rev = "d7056e3"
 hash = "be8e1b31833e356cad14dcda9d8ad2d3"
 
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "8f37dc5"
+hash = "ee71543790f0ce3951161045a3787abd"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
 rev = "3edeb49"
