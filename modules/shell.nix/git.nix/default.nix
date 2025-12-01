@@ -1,4 +1,14 @@
-{ lib, ... }: {
-  programs.git.enable = true;
-  xdg.configFile."git/config" = lib.mkForce { source = ./gitconfig; };
+{ ... }: {
+  programs = {
+    git = {
+      enable = true;
+      includes = [{ path = ./gitconfig; }];
+    };
+
+    # For better git diff
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
+    };
+  };
 }
