@@ -12,6 +12,7 @@
     ./browser.nix
     ./toolkits.nix
     ./office.nix
+    ./fonts.nix
   ];
 
   xdg.autostart.enable = true;
