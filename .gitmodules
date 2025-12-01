@@ -22,3 +22,6 @@
 [submodule "modules/de.nix/terminal.nix/kitty"]
 	path = modules/de.nix/terminal.nix/kitty
 	url = git@github.com:Cricarvbnm/cfg-kitty.git
+[submodule "modules/shell.nix/yazi.nix/yazi"]
+	path = modules/shell.nix/yazi.nix/yazi
+	url = git@github.com:Cricarvbnm/cfg-yazi.git
