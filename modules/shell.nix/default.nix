@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 let inherit (lib) mkAfter;
 in {
-  imports = [ ./nvim.nix ./starship.nix ./git.nix ];
+  imports = [ ./nvim.nix ./starship.nix ./git.nix ./dev.nix ];
 
   home.packages = with pkgs; [
     bat
