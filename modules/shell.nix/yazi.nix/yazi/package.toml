@@ -28,6 +28,11 @@ use = "yazi-rs/plugins:smart-paste"
 rev = "eaf6920"
 hash = "75fd60b2df7115e0a6ca31a6a804d320"
 
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "d7056e3"
+hash = "be8e1b31833e356cad14dcda9d8ad2d3"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
 rev = "3edeb49"
