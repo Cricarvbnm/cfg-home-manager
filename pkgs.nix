@@ -1,6 +1,6 @@
 # This is a nixos module and home-manager module
 
-{ inputs, ... }: {
+{ ... }: {
   nixpkgs.overlays = [
     # Include all from ./pkgs
     (self: super:
@@ -16,7 +16,5 @@
         }) filenames);
 
       in mapAttrs (k: v: super.callPackage v { }) nameFileSet))
-
-    (self: super: { inherit (inputs.nixpkgs-stable) ffmpeg-normalize; })
   ];
 }

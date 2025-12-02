@@ -1,12 +1,8 @@
 # Home-Manager in standalone mode
 # This is a home-manager module
 
-{ config, ... }:
-let
-  inputs = {
-    nixpkgs-stable =
-      import <nixpkgs-stable> { config = config.nixpkgs.config; };
-  };
+{ ... }:
+let inputs = { };
 in {
   imports = [
     ./shared.nix
