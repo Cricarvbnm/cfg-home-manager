@@ -11,5 +11,4 @@
     else
       "hyprlock/current.conf"
   }".source = config.lib.file.mkOutOfStoreSymlink ./hyprlock.conf;
-  mine.de.idle.lock = "hyprlock";
 }
