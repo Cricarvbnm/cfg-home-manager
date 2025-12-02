@@ -33,6 +33,7 @@
     gtk3.extraConfig = fcitxConfig;
     gtk2.extraConfig = ''gtk-im-module="fcitx"'';
   });
+  dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
   home.packages = with pkgs; [ qt6Packages.qt6ct catppuccin-kvantum ];
   qt = {
