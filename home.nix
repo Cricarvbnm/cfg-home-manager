@@ -22,8 +22,19 @@ in {
     ./users/alec.nix # Personal Configuration
   ];
 
-  nix.channels = channels;
   _module.args = { inherit inputs; };
+  nix = {
+    package = pkgs.nix;
+    channels = channels;
+    settings = {
+      experimental-features = [ "flakes" "nix-command" ];
+      max-jobs = "auto";
+    };
+    gc = {
+      automatic = true;
+      dates = "monthly";
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
   targets.genericLinux.enable = true;
