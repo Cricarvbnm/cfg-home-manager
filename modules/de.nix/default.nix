@@ -1,18 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    # ./hypr.nix
-    ./niri.nix
-
-    ./wallpaper.nix
-    ./torrent.nix
-    ./idle.nix
-    ./terminal.nix
-    ./video.nix
-    ./dev.nix
-    ./browser.nix
-    ./toolkits.nix
-    ./office.nix
-  ];
+  imports = [ ./toolkits.nix ./common.nix ./cores/custom.nix ];
 
   xdg.autostart.enable = true;
   home.packages = with pkgs; [ loupe baobab bleachbit qq wechat wl-clipboard ];

@@ -14,5 +14,5 @@
     };
   };
 
-  home.packages = with pkgs; [ networkmanagerapplet xdg-launch ];
+  home.packages = with pkgs; [ networkmanagerapplet ];
 }
