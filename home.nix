@@ -1,31 +1,20 @@
 # Home-Manager in standalone mode
 # This is a home-manager module
 
-{ lib, pkgs, ... }:
-let
-  channelURLs = {
-    nixpkgs = "https://channels.nixos.org/nixos-25.11/nixexprs.tar.xz";
-    home-manager =
-      "https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz";
-  };
-  channels = lib.mapAttrs (name: url: builtins.fetchTarball url) channelURLs;
-  inputs =
-    lib.mapAttrs (name: channel: import channel { inherit (pkgs) config; })
-    channels;
-in {
+{ pkgs, ... }: {
   imports = [
-    ./shared.nix
-    ./pkgs.nix
+    ./flake-compat.nix # Add `inputs` from flake.nix into module arguments
 
-    ./hosts/generic-linux/nvidia.nix
+    ./shared.nix # Works in both NixOS and generic linux
+    ./pkgs.nix # Custom packages
+
+    ./hosts/generic-linux/nvidia.nix # Do something for generic linux
 
     ./users/alec.nix # Personal Configuration
   ];
 
-  _module.args = { inherit inputs; };
   nix = {
     package = pkgs.nix;
-    channels = channels;
     settings = {
       experimental-features = [ "flakes" "nix-command" ];
       max-jobs = "auto";
