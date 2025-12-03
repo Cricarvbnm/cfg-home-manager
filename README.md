@@ -2,34 +2,52 @@
 
 This repository includes the versions of standalone and nixos modules.
 
-**No flakes**.
+In fact, this is not a flake. Use flake to manage inputs,
+but use [flake-compat](https://github.com/NixOS/flake-compat) to get inputs
+and set them to `nix.channels` and `_module.arg.inputs`.
 
-## Standalone (mainly for generic linux)
+## Files and Usage
 
-The entry is `home.nix`,
-**importing the user-specified configuration** (`users/alec.nix`).
+### Standalone (for generic linux)
 
-## NixOS Module
+- `home.nix`: The entry that
+  **importing the user-specified configuration** (`users/alec.nix`).
+  Contains settings only for generic linux.
 
-The entry is `default.nix`.
+- `flake-compat.nix`: Manages inputs in flake's way,
+  makes them available in module arguments and adds as channels.
+  - `default.nix`: Sets inputs from `compat.nix` to `_module.args` and `nix.channels`
+  - `compat.nix`: Use [flake-compat](https://github.com/NixOS/flake-compat)
+    to something according to `flake.nix` and `flake.lock`
+  - `flake.nix` & `flake.lock`: Needs to be managed by command `nix flake`
 
-## Requirements: `inputs` / Channels (in $NIX_PATH)
+- `hosts`: Host-related modules
+  - `generic-linux`: modules for generic linux
 
-Channels are added into `inputs` in `home.nix` (as standalone)
-or any parent module like `/etc/nixos/configuration.nix` (as nixos module).
+### NixOS Module
 
-### Standalone (Channels)
+- `default.nix`: The entry, only works as nixos module without flake.
 
-See `home.nix`.
+### Shared
 
-### NixOS Module (`inputs`)
+- `shared.nix`: A home-manager module used in both modes (standalone and nixos module).
 
-| Channel      | Variable Name in Module Arguments | Link                                                                       | Description                      |
-| ------------ | --------------------------------- | -------------------------------------------------------------------------- | -------------------------------- |
-| home-manager |                                   | https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz |                                  |
-| nixos-stable | `inputs.nixpkgs-stable`           | https://mirrors.cernet.edu.cn/nix-channels/nixos-25.05                     | Stable version of nixpkgs to use |
+- `pkgs.nix`: Adds custom packages using overlays.
+
+- `pkgs`: Custom packages.
+
+- `users`: Modules for per-user settings.
+
+- `modules`: Home settings.
 
 ## Deployment
+
+### Channels
+
+Examples
+
+- `nixpkgs`: https://channels.nixos.org/nixos-25.11
+- `home-manager`: https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz
 
 ### Standalone
 
