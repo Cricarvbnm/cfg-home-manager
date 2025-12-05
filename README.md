@@ -5,7 +5,7 @@ This repository includes the versions of standalone and nixos modules.
 In fact, this is not a flake (can be). Use flake to manage inputs,
 but use [unflake](https://codeberg.org/goldstein/unflake) to emulate a flake
 (manage and pin inputs)
-and use [nh](https://github.com/NixOS/nh) to switch the configuration.
+and use [nh](https://github.com/nix-community/nh) to switch the configuration.
 
 ## Usage
 
