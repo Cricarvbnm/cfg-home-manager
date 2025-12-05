@@ -12,6 +12,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.url = "nixpkgs";
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, flake-utils, unflake, nixpkgs, home-manager, ... }@inputs:
