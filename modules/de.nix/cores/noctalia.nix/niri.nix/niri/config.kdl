@@ -430,7 +430,7 @@ binds {
 
     // Quick Access
     Mod+A {
-        spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"
+        spawn-sh "copyq show"
     }
     Mod+Alt+D {
         spawn-sh "qs -c noctalia-shell ipc call calendar toggle"
