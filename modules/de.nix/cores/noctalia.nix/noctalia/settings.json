@@ -33,7 +33,7 @@
         "marginVertical": 0.25,
         "monitors": [
         ],
-        "outerCorners": true,
+        "outerCorners": false,
         "position": "top",
         "showCapsule": true,
         "widgets": {
@@ -112,7 +112,7 @@
                     "rightClickExec": "",
                     "rightClickUpdateText": false,
                     "textCollapse": "",
-                    "textCommand": "ip route show default | awk '/enp/ {print $3}'",
+                    "textCommand": "ip route | awk '/enp/ {print $9}' | head -n 1",
                     "textIntervalMs": 3000,
                     "textStream": false,
                     "wheelDownExec": "",
