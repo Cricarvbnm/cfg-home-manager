@@ -1,18 +1,11 @@
-{ config, inputs, ... }: {
+{ config, ... }: {
   imports = [
     ./niri.nix
 
     ../modules/idle/hypridle.nix
     ../modules/clipboard/copyq.nix
     ../modules/polkit/hyprpolkitagent.nix
-
-    inputs.noctalia.homeModules.default
   ];
-
-  programs.noctalia-shell = {
-    enable = true;
-    systemd.enable = true;
-  };
 
   xdg.configFile.noctalia.source =
     config.lib.file.mkOutOfStoreSymlink ./noctalia;

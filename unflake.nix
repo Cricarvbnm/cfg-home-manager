@@ -24,12 +24,6 @@ let
       repo = "nixpkgs";
       rev = "ece6e266caf1effab32eceef0403b797b4330373";
     };
-    unflake_github_noctalia-dev_noctalia-shell = builtins.fetchTree {
-      type = "github";
-      owner = "noctalia-dev";
-      repo = "noctalia-shell";
-      rev = "aa48d38d574f7f9ecee73bfd017d31d3a53c1877";
-    };
     unflake_github_numtide_flake-utils = builtins.fetchTree {
       type = "github";
       owner = "numtide";
@@ -71,14 +65,6 @@ let
       outPath = "${deps.unflake_github_nixos_nixpkgs_ref_nixpkgs-unstable.outPath}";
       sourceInfo = deps.unflake_github_nixos_nixpkgs_ref_nixpkgs-unstable;
     };
-    unflake_github_noctalia-dev_noctalia-shell = ((import "${deps.unflake_github_noctalia-dev_noctalia-shell.outPath}/flake.nix").outputs {
-      self = unflake_github_noctalia-dev_noctalia-shell;
-      nixpkgs = unflake_github_nixos_nixpkgs_ref_nixos-unstable;
-    }) // deps.unflake_github_noctalia-dev_noctalia-shell // {
-      _flake = true;
-      outPath = "${deps.unflake_github_noctalia-dev_noctalia-shell.outPath}";
-      sourceInfo = deps.unflake_github_noctalia-dev_noctalia-shell;
-    };
     unflake_github_numtide_flake-utils = ((import "${deps.unflake_github_numtide_flake-utils.outPath}/flake.nix").outputs {
       self = unflake_github_numtide_flake-utils;
       systems = unflake_github_nix-systems_default;
@@ -100,7 +86,6 @@ let
     flake-utils = universe.unflake_github_numtide_flake-utils;
     home-manager = universe.unflake_github_nix-community_home-manager;
     nixpkgs = universe.unflake_github_nixos_nixpkgs_ref_nixpkgs-unstable;
-    noctalia = universe.unflake_github_noctalia-dev_noctalia-shell;
     unflake = universe.unflake_tarball_https---codeberg-org-goldstein-unflake-archive-main-tar-gz;
     self = throw "to use inputs.self, write `(import ./unflake.nix).withInputs (inputs: ...)`";
     withInputs = outputs: let self = outputs (inputs // { inherit self; }); in self;
