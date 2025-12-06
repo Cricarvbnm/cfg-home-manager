@@ -4,7 +4,7 @@
 
     ../modules/idle/hypridle.nix
     ../modules/clipboard/copyq.nix
-    ../modules/polkit/hyprpolkitagent.nix
+    ../modules/polkit/polkit-gnome.nix
   ];
 
   xdg.configFile.noctalia.source =
@@ -14,6 +14,6 @@
   mine.de.idle = {
     displays.niri = on:
       "niri msg action power-${if on then "on" else "off"}-monitors";
-    lock = "qc -c noctalia-shell ipc call lockScreen lock";
+    lock = "qs -c noctalia-shell ipc call lockScreen lock";
   };
 }
