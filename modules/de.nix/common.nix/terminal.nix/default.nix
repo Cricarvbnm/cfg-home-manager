@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.kitty = {
     enable = true;
 
@@ -11,9 +12,10 @@
 
   xdg.configFile = {
     "kitty/current-theme.conf".source = ./kitty/current-theme.conf;
-    "kitty/kitty-custom.conf".source =
-      config.lib.file.mkOutOfStoreSymlink ./kitty/kitty.conf;
+    "kitty/kitty-custom.conf".source = config.lib.file.mkOutOfStoreSymlink ./kitty/kitty.conf;
   };
 
-  home.sessionVariables = { TERMINAL = "kitty"; };
+  home.sessionVariables = {
+    TERMINAL = "kitty";
+  };
 }

@@ -1,1 +1,4 @@
-{ ... }: { services.polkit-gnome.enable = true; }
+{ ... }:
+{
+  services.polkit-gnome.enable = true;
+}

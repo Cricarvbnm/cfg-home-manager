@@ -1,8 +1,9 @@
-{ ... }: {
+{ ... }:
+{
   programs = {
     git = {
       enable = true;
-      includes = [{ path = ./gitconfig; }];
+      includes = [ { path = ./gitconfig; } ];
     };
 
     # For better git diff

@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   programs.yazi = {
     enable = true;
     extraPackages = with pkgs; [

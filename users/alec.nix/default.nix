@@ -1,5 +1,9 @@
-{ pkgs, ... }: {
-  imports = [ ../../modules/system.nix/tieba-sign.nix ../../modules/de.nix ];
+{ pkgs, ... }:
+{
+  imports = [
+    ../../modules/system.nix/tieba-sign.nix
+    ../../modules/de.nix
+  ];
 
   home = {
     username = "alec";

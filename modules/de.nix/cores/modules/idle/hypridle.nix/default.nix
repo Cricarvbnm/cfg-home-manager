@@ -1,26 +1,43 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   inherit (lib)
-    mkOption types literalMD mapAttrs mapAttrsToList concatStringsSep toLower;
+    mkOption
+    types
+    literalMD
+    mapAttrs
+    mapAttrsToList
+    concatStringsSep
+    toLower
+    ;
   cfg = config.mine.de.idle;
 
   scriptTemplate = ./display-toggle.bash;
 
   # 1. Process compositor commands: escape and split into on/off sets
-  processCommands = on:
+  processCommands =
+    on:
     mapAttrs (compositor: toggleFn: {
       compositorEscaped = toLower compositor;
       commandEscaped = (toggleFn on);
     }) cfg.displays;
 
   # 2. Generate shell array definitions (to inject into the template)
-  generateArrayDefinitions = on:
+  generateArrayDefinitions =
+    on:
     let
       commandSet = processCommands on;
       arrayName = if on then "SUPPORTED_ON" else "SUPPORTED_OFF";
-    in concatStringsSep "\n" (mapAttrsToList (compositor: data:
-      ''${arrayName}["${data.compositorEscaped}"]="${data.commandEscaped}"'')
-      commandSet);
+    in
+    concatStringsSep "\n" (
+      mapAttrsToList (
+        compositor: data: ''${arrayName}["${data.compositorEscaped}"]="${data.commandEscaped}"''
+      ) commandSet
+    );
 
   # 3. Inject dynamic content into the external script template
   # Replace placeholders with generated array definitions
@@ -37,7 +54,8 @@ let
 
   # Script installation path (globally accessible)
   scriptPath = "${displayToggleScript}/bin/display-toggle";
-in {
+in
+{
   options.mine.de.idle = {
     # Preserve original lock command option
     lock = mkOption {
@@ -68,8 +86,7 @@ in {
         - KDE Plasma: "KDE"
         - LabWC: "LabWC"
       '';
-      type =
-        types.attrsOf (types.functionTo types.str); # Function type: bool → str
+      type = types.attrsOf (types.functionTo types.str); # Function type: bool → str
       default = { }; # No default configuration
     };
   };

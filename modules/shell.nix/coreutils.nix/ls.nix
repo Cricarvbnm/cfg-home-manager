@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home = {
     packages = [ pkgs.lsd ];
     shellAliases = {

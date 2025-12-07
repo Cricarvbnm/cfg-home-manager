@@ -1,1 +1,9 @@
-{ ... }: { imports = [ ./cat.nix ./cd.nix ./ls.nix ./diff.nix ]; }
+{ ... }:
+{
+  imports = [
+    ./cat.nix
+    ./cd.nix
+    ./ls.nix
+    ./diff.nix
+  ];
+}

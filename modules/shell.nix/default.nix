@@ -1,6 +1,13 @@
-{ config, lib, pkgs, ... }:
-let inherit (lib) mkAfter;
-in {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  inherit (lib) mkAfter;
+in
+{
   imports = [
     ./coreutils.nix
     ./rsync.nix
@@ -49,7 +56,10 @@ in {
 
       syntaxHighlighting = {
         enable = true;
-        highlighters = [ "main" "brackets" ];
+        highlighters = [
+          "main"
+          "brackets"
+        ];
       };
 
       oh-my-zsh = {

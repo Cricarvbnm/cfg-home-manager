@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   targets.genericLinux.gpu = {
     nvidia = {
       enable = true;

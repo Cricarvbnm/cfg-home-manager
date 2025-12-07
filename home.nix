@@ -1,7 +1,8 @@
 # Home-Manager in standalone mode
 # This is a home-manager module
 
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./shared.nix # Works in both NixOS and generic linux
 
@@ -11,7 +12,10 @@
   nix = {
     package = pkgs.nix;
     settings = {
-      experimental-features = [ "flakes" "nix-command" ];
+      experimental-features = [
+        "flakes"
+        "nix-command"
+      ];
       max-jobs = "auto";
     };
     gc = {

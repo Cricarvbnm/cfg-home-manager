@@ -5,8 +5,7 @@
 rec {
   username = "alec"; # configure for whom
 
-  system =
-    builtins.currentSystem or "x86_64-linux"; # configure for which system;
+  system = builtins.currentSystem or "x86_64-linux"; # configure for which system;
 
   # For nh.
   # `NH_FILE=${entryFile} NH_ATTRP=${attrPath} nh home switch`
