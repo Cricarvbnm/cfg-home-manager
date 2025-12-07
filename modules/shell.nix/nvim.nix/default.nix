@@ -1,8 +1,14 @@
 { config, pkgs, ... }:
 let
-  myTexlive =
-    pkgs.texliveMedium.withPackages (ps: with ps; [ ctex enumitem titling ]);
-in {
+  myTexlive = pkgs.texliveMedium.withPackages (
+    ps: with ps; [
+      ctex
+      enumitem
+      titling
+    ]
+  );
+in
+{
   programs.neovim = {
     enable = true;
     withNodeJs = true;
@@ -20,12 +26,16 @@ in {
       python3
       nodejs_24
       myTexlive
+
+      nixfmt
     ];
   };
 
-  home.packages = [ myTexlive pkgs.zathura ];
+  home.packages = [
+    myTexlive
+    pkgs.zathura
+  ];
 
   xdg.configFile.nvim.source = config.lib.file.mkOutOfStoreSymlink ./nvim;
-  home.file.".latexmkrc".source =
-    config.lib.file.mkOutOfStoreSymlink ./latexmkrc;
+  home.file.".latexmkrc".source = config.lib.file.mkOutOfStoreSymlink ./latexmkrc;
 }
