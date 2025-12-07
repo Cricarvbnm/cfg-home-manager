@@ -19,6 +19,7 @@ in {
     dust # du
     gdu # du with console
 
+    fastfetch
     file
     htop
     iftop
