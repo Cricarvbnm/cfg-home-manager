@@ -1,1 +1,11 @@
-{ ... }: { programs.vscode = { enable = true; }; }
+{ pkgs, ... }: {
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode.override {
+      commandLineArgs =
+        [ "--enable-features=UseOzonePlatform" "--ozone-platform=wayland" ];
+    };
+  };
+
+  home.packages = with pkgs; [ nodejs_24 ];
+}
