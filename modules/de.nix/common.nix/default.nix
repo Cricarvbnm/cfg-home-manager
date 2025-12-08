@@ -7,5 +7,6 @@
     ./browser.nix
     ./office.nix
     ./torrent.nix
+    ./system-monitors.nix
   ];
 }
