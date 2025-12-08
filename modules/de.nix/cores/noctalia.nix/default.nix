@@ -5,7 +5,6 @@
 
     ../modules/idle/hypridle.nix
     ../modules/clipboard/copyq.nix
-    ../modules/polkit/polkit-gnome.nix
   ];
 
   xdg.configFile.noctalia.source = config.lib.file.mkOutOfStoreSymlink ./noctalia;

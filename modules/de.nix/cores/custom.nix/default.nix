@@ -10,7 +10,6 @@
     ../modules/logout/wlogout.nix
     ../modules/menu/fuzzel.nix
     ../modules/notification/swaync.nix
-    ../modules/polkit/hyprpolkitagent.nix
     ../modules/wallpaper/hyprpaper.nix
   ];
 }
