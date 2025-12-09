@@ -20,12 +20,22 @@ in
   ];
 
   home.packages = with pkgs; [
+    # Core
     fd # finder
     fzf # finder
     duf # df
     dust # du
     gdu # du with console
 
+    # Archive
+    unzip
+    zip
+    p7zip
+    rar
+    xz
+    zstd
+
+    # Others
     fastfetch
     file
     htop
