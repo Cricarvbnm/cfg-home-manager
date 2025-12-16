@@ -16,5 +16,3 @@
     ca = "commit --all"
     cu = "commit --amend"
 
-[pull]
-    rebase = true
