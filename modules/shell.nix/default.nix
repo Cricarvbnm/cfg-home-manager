@@ -45,6 +45,7 @@ in
     aria2 # multi-protocol download utility
     curl # data transfer tool
     ffmpeg-headless # FFmpeg (headless) for audio/video processing
+    tldr # Simple manual
   ];
 
   programs = {
