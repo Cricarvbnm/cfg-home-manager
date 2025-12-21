@@ -199,7 +199,7 @@
                 },
                 {
                     "customFont": "",
-                    "formatHorizontal": "yyyy-MM-dd HH:mm ddd",
+                    "formatHorizontal": "yyyy-MM-dd HH:mm:ss ddd",
                     "formatVertical": "HH mm - dd MM",
                     "id": "Clock",
                     "useCustomFont": false,

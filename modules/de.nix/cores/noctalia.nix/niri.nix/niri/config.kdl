@@ -454,8 +454,8 @@ binds {
         spawn-sh ""
     }
 
-    Mod+E hotkey-overlay-title="Open a File Manager: thunar" { spawn "thunar"; }
-    Mod+Shift+E hotkey-overlay-title="Open Desktop: thunar" { spawn-sh "thunar ~/Desktop"; }
+    Mod+E hotkey-overlay-title="Open a File Manager: nemo" { spawn "nemo"; }
+    Mod+Shift+E hotkey-overlay-title="Open Desktop: nemo" { spawn-sh "nemo ~/Desktop"; }
     Mod+Y hotkey-overlay-title="Open File Manager: yazi" { spawn-sh "xdg-launch yazi"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
