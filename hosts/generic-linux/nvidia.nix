@@ -3,10 +3,10 @@
   targets.genericLinux.gpu = {
     nvidia = {
       enable = true;
-      version = "580.119.02";
+      version = "590.48.01";
 
-      # nix store prefetch-file https://download.nvidia.com/XFree86/Linux-x86_64/@VERSION@/NVIDIA-Linux-x86_64-@VERSION@.run
-      sha256 = "sha256-gCD139PuiK7no4mQ0MPSr+VHUemhcLqerdfqZwE47Nc=";
+      # nix store prefetch-file https://download.nvidia.com/XFree86/Linux-x86_64/$version/NVIDIA-Linux-x86_64-$version.run
+      sha256 = "sha256-ueL4BpN4FDHMh/TNKRCeEz3Oy1ClDWto1LO/LWlr1ok=";
     };
   };
   nixpkgs.config.nvidia.acceptLicense = true;
