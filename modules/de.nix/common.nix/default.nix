@@ -12,10 +12,11 @@
   ];
 
   home.packages = with pkgs; [
-    loupe
+    loupe # Picture viewer
     wl-clipboard
   ];
 
+  # Screen recording
   programs.obs-studio = {
     enable = true;
     plugins = with pkgs.obs-studio-plugins; [
