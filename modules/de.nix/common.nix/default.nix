@@ -8,5 +8,6 @@
     ./office.nix
     ./torrent.nix
     ./system-monitors.nix
+    ./communication.nix
   ];
 }

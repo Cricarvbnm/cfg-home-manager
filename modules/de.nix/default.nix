@@ -11,8 +11,6 @@
     loupe
     baobab
     bleachbit
-    qq
-    wechat
     wl-clipboard
   ];
 
