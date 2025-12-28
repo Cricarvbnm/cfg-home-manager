@@ -7,14 +7,12 @@
     ./browser.nix
     ./office.nix
     ./torrent.nix
-    ./system-monitors.nix
+    ./system-management.nix
     ./communication.nix
   ];
 
   home.packages = with pkgs; [
     loupe
-    baobab
-    bleachbit
     wl-clipboard
   ];
 

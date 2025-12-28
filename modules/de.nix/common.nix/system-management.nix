@@ -2,5 +2,7 @@
 {
   home.packages = with pkgs; [
     mission-center
+    baobab
+    bleachbit
   ];
 }
