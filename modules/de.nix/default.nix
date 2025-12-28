@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
     ./toolkits.nix
@@ -7,19 +7,4 @@
   ];
 
   xdg.autostart.enable = true;
-  home.packages = with pkgs; [
-    loupe
-    baobab
-    bleachbit
-    wl-clipboard
-  ];
-
-  programs.obs-studio = {
-    enable = true;
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-    ];
-  };
 }
