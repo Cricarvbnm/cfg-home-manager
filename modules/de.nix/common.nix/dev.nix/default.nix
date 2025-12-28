@@ -2,5 +2,5 @@
 {
   imports = [ ./vscode.nix ];
 
-  home.packages = with pkgs; [ jetbrains.idea-ultimate ];
+  home.packages = with pkgs; [ jetbrains.idea ];
 }
