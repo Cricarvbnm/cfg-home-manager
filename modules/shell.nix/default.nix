@@ -11,7 +11,7 @@
     ./starship.nix
     ./git.nix
     ./dev.nix
-    ./nix-output-monitor.nix
+    # ./nix-output-monitor.nix
     ./yazi.nix
   ];
 
