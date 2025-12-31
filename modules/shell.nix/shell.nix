@@ -1,33 +1,38 @@
-{ config, lib, ... }:
-let
-  inherit (lib) mkAfter;
-in
+{ config, ... }:
 {
-  programs.zsh = {
-    enable = true;
+  programs = {
+    # Interactive shell
+    fish = {
+      enable = true;
 
-    dotDir = "${config.xdg.configHome}/zsh";
-    initContent = mkAfter "bindkey -v";
+      loginShellInit = ''
+        # Source /etc/profile if it exists
+        exec bash -c "test -e /etc/profile && source /etc/profile; exec fish"
+      '';
 
-    history = {
-      path = "${config.xdg.stateHome}/zsh/history";
-      expireDuplicatesFirst = true;
-      extended = true;
-      findNoDups = true;
-      share = false;
+      interactiveShellInit = ''
+        # Use vi keybindings
+        fish_vi_key_bindings
+      '';
+
+      shellInit = ''
+        # Ensure SHELL variable is set to fish
+        set -gx SHELL "${config.programs.fish.package}/bin/fish"
+      '';
     };
 
-    syntaxHighlighting = {
+    # Login shell
+    bash = {
       enable = true;
-      highlighters = [
-        "main"
-        "brackets"
-      ];
-    };
 
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "sudo" ];
+      initExtra = ''
+        # Launch interactive shell
+        if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} && ''${SHLVL} == 1 ]]
+        then
+          shopt -q login_shell && LOGIN_OPTION="--login" || LOGIN_OPTION=""
+          exec "${config.programs.fish.package}/bin/fish" $LOGIN_OPTION
+        fi
+      '';
     };
   };
 }
