@@ -2,7 +2,5 @@
 {
   home.packages = with pkgs; [
     telegram-desktop
-    qq
-    wechat
   ];
 }
