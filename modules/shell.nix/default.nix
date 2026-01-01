@@ -42,6 +42,7 @@
     curl # data transfer tool
     ffmpeg-headless # FFmpeg (headless) for audio/video processing
     tldr # Simple manual
+    less # Pager
   ];
 
   programs = {
