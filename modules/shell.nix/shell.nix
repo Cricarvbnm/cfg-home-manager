@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   programs = {
     # Interactive shell
@@ -19,6 +19,21 @@
         # Ensure SHELL variable is set to fish
         set -gx SHELL "${config.programs.fish.package}/bin/fish"
       '';
+
+      plugins = with pkgs.fishPlugins; [
+        {
+          name = "bass";
+          src = bass.src;
+        }
+        {
+          name = "done";
+          src = done.src;
+        }
+        {
+          name = "autopair";
+          src = autopair.src;
+        }
+      ];
     };
 
     # Login shell
@@ -35,4 +50,8 @@
       '';
     };
   };
+
+  home.packages = with pkgs; [
+    jq # Needed by fish plugin 'done'
+  ];
 }
