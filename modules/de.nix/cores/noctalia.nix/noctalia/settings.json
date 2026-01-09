@@ -587,7 +587,7 @@
         "tooltipsEnabled": true
     },
     "wallpaper": {
-        "directory": "/storage/General/Pictures/Wallpaper",
+        "directory": "/storage/media/images/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
@@ -597,8 +597,8 @@
         ],
         "overviewEnabled": true,
         "panelPosition": "follow_bar",
-        "randomEnabled": false,
-        "randomIntervalSec": 300,
+        "randomEnabled": true,
+        "randomIntervalSec": 1800,
         "recursiveSearch": true,
         "setWallpaperOnAllMonitors": true,
         "solidColor": "#1a1a2e",
