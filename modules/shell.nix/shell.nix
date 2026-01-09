@@ -4,7 +4,6 @@
     # Interactive shell
     fish = {
       enable = true;
-
       loginShellInit = ''
         # Source /etc/profile if it exists
         exec bash -c "test -e /etc/profile && source /etc/profile; exec fish"
@@ -34,6 +33,8 @@
           src = autopair.src;
         }
       ];
+
+      preferAbbrs = true;
     };
 
     # Login shell
