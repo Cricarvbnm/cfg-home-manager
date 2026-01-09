@@ -5,9 +5,9 @@ let
       type = "github";
       owner = "nix-community";
       repo = "home-manager";
-      rev = "a65c04965c841eb01ba401f5162f12bc8d52014f";
-      lastModified = 1767619743;
-      narHash = "sha256-N0kK1JqxIjFl7hPAfhkW6C9AO7feYJUWLPyqJO2VuQQ=";
+      rev = "297a08510894822ddd93ee2cfc66d6ac65a3cebb";
+      lastModified = 1767930051;
+      narHash = "sha256-YXtqo8h5bAbqC64XAPMMsZdYk8XkwkyNj/7XOsIyVf8=";
     };
     unflake_github_nix-systems_default = builtins.fetchTree {
       type = "github";
@@ -21,9 +21,9 @@ let
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
-      rev = "fb7944c166a3b630f177938e478f0378e64ce108";
-      lastModified = 1767379071;
-      narHash = "sha256-EgE0pxsrW9jp9YFMkHL9JMXxcqi/OoumPJYwf+Okucw=";
+      rev = "5912c1772a44e31bf1c63c0390b90501e5026886";
+      lastModified = 1767767207;
+      narHash = "sha256-Mj3d3PfwltLmukFal5i3fFt27L6NiKXdBezC1EBuZs4=";
     };
     unflake_github_nixos_nixpkgs_ref_nixpkgs-unstable = builtins.fetchTree {
       type = "github";
