@@ -5,9 +5,9 @@ let
       type = "github";
       owner = "nix-community";
       repo = "home-manager";
-      rev = "297a08510894822ddd93ee2cfc66d6ac65a3cebb";
-      lastModified = 1767930051;
-      narHash = "sha256-YXtqo8h5bAbqC64XAPMMsZdYk8XkwkyNj/7XOsIyVf8=";
+      rev = "b4d88c9ac42ae1a745283f6547701da43b6e9f9b";
+      lastModified = 1768434960;
+      narHash = "sha256-cJbFn17oyg6qAraLr+NVeNJrXsrzJdrudkzI4H2iTcg=";
     };
     unflake_github_nix-systems_default = builtins.fetchTree {
       type = "github";
@@ -21,17 +21,17 @@ let
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
-      rev = "5912c1772a44e31bf1c63c0390b90501e5026886";
-      lastModified = 1767767207;
-      narHash = "sha256-Mj3d3PfwltLmukFal5i3fFt27L6NiKXdBezC1EBuZs4=";
+      rev = "1412caf7bf9e660f2f962917c14b1ea1c3bc695e";
+      lastModified = 1768305791;
+      narHash = "sha256-AIdl6WAn9aymeaH/NvBj0H9qM+XuAuYbGMZaP0zcXAQ=";
     };
     unflake_github_nixos_nixpkgs_ref_nixpkgs-unstable = builtins.fetchTree {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
-      rev = "16c7794d0a28b5a37904d55bcca36003b9109aaa";
-      lastModified = 1767364772;
-      narHash = "sha256-fFUnEYMla8b7UKjijLnMe+oVFOz6HjijGGNS1l7dYaQ=";
+      rev = "13868c071cc73a5e9f610c47d7bb08e5da64fdd5";
+      lastModified = 1768395095;
+      narHash = "sha256-ZhuYJbwbZT32QA95tSkXd9zXHcdZj90EzHpEXBMabaw=";
     };
     unflake_github_numtide_flake-utils = builtins.fetchTree {
       type = "github";
@@ -43,9 +43,9 @@ let
     };
     unflake_tarball_https---codeberg-org-goldstein-unflake-archive-main-tar-gz = builtins.fetchTree {
       type = "tarball";
-      url = "https://codeberg.org/api/v1/repos/goldstein/unflake/archive/553a30b7cd24e67aa0335a6ecf0dfd18a5224cb5.tar.gz";
-      lastModified = 1766770453;
-      narHash = "sha256-dc+eHCfndHdhObhQTEHax3Qu4Ouy++2azvVusiruOiY=";
+      url = "https://codeberg.org/api/v1/repos/goldstein/unflake/archive/49fb9e4983091bea3d533d816793c48514df384c.tar.gz";
+      lastModified = 1768399392;
+      narHash = "sha256-MFRp1pi9sApw9OuQmMbIItga3dJOOCLfvIAUFaAS3HM=";
     };
   };
   universe = rec {
