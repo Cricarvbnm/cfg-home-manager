@@ -5,9 +5,9 @@
   ...
 }:
 let
-  aliases = {
+  aliases = rec {
     cpr = "rsync --archive -hhh --partial --info=stats1,progress2 --modify-window=1";
-    mvr = "cpr --remove-source-files";
+    mvr = "${cpr} --remove-source-files";
   };
 in
 {
