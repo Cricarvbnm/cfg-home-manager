@@ -1,17 +1,17 @@
 [submodule "modules/de.nix/bar.nix/waybar"]
-	path = modules/de.nix/cores/modules/bar/waybar.nix/waybar
+	path = modules/de.nix/core.nix/modules/bar/waybar.nix/waybar
 	url = git@github.com:Cricarvbnm/cfg-waybar.git
 [submodule "modules/de.nix/video.nix/mpv"]
 	path = modules/de.nix/common.nix/video.nix/mpv
 	url = git@github.com:Cricarvbnm/cfg-mpv.git
 [submodule "modules/de.nix/notification.nix/swaync"]
-	path = modules/de.nix/cores/modules/notification/swaync.nix/swaync
+	path = modules/de.nix/core.nix/modules/notification/swaync.nix/swaync
 	url = git@github.com:Cricarvbnm/cfg-swaync.git
 [submodule "modules/shell.nix/nvim.nix/nvim"]
 	path = modules/shell.nix/nvim.nix/nvim
 	url = git@github.com:Cricarvbnm/cfg-AstroNvim.git
 [submodule "modules/de.nix/menu.nix/fuzzel"]
-	path = modules/de.nix/cores/modules/menu/fuzzel.nix/fuzzel
+	path = modules/de.nix/core.nix/modules/menu/fuzzel.nix/fuzzel
 	url = git@github.com:catppuccin/fuzzel.git
 [submodule "modules/de.nix/terminal.nix/kitty"]
 	path = modules/de.nix/common.nix/terminal.nix/kitty

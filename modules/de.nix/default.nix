@@ -3,7 +3,7 @@
   imports = [
     ./toolkits.nix
     ./common.nix
-    ./cores/noctalia.nix
+    ./core.nix
   ];
 
   xdg.autostart.enable = true;
