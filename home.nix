@@ -1,13 +1,22 @@
-# Home-Manager in standalone mode
-# This is a home-manager module
-
 { pkgs, ... }:
 {
   imports = [
-    ./shared.nix # Works in both NixOS and generic linux
+    # Do something for generic linux
+    ./hosts/generic-linux/nvidia.nix
 
-    ./hosts/generic-linux/nvidia.nix # Do something for generic linux
+    # Main settings
+    ./modules/de.nix
+    ./modules/shell.nix
+    ./modules/system.nix
   ];
+
+  home = {
+    username = "alec";
+    homeDirectory = "/home/alec";
+    file.".icon".source = ./icon.png;
+
+    stateVersion = "25.05";
+  };
 
   nix = {
     package = pkgs.nix;
@@ -28,4 +37,5 @@
   targets.genericLinux.enable = true;
 
   programs.home-manager.enable = true;
+
 }

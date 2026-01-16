@@ -41,6 +41,7 @@
     ffmpeg-headless # FFmpeg (headless) for audio/video processing
     tldr # Simple manual
     less # Pager
+    save-music # Save and normalize music with lyrics
   ];
 
   programs = {

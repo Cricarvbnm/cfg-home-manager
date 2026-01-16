@@ -84,8 +84,7 @@
             nix.settings.experimental-features = [ "flakes" ];
           }
 
-          ./users/${username}.nix # user-specific configuration
-          ./home.nix # generic home configuration
+          ./home.nix # home configuration
         ];
       };
 

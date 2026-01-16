@@ -1,11 +1,10 @@
 # Home-Manager Configuration
 
-This repository includes the versions of standalone and nixos modules.
+Standalone home-manager.
 
-In fact, this is not a flake (can be). Use flake to manage inputs,
-but use [unflake](https://codeberg.org/goldstein/unflake) to emulate a flake
-(manage and pin inputs)
-and use [nh](https://github.com/nix-community/nh) to switch the configuration.
+In fact, this is not a flake (can be but without a `flake.lock`). Use flake to manage inputs,
+[unflake](https://codeberg.org/goldstein/unflake) to emulate a flake (manage and pin inputs) and
+use [nh](https://github.com/nix-community/nh) to switch the configuration.
 
 ## Usage
 
@@ -38,32 +37,14 @@ nh evaluates `home-entry.nix` by
 ```shell
 # Already set these variables in configuration
 # export NIX_FILE=/path/to/home-entry.nix
-# export NIX_ATTRP=homeConfigurations.${username}
+# export NIX_ATTRP=homeConfigurations.$USER
 
 nh home switch
 ```
 
-`username` needs to be set in `info.nix`.
-
 ## Files
 
-### Shared
-
-**Can be customized:**
-
-- `info.nix`: Custom information to configure the home.
-
-- `shared.nix`: A home-manager module used in both modes (standalone and nixos module).
-
-- `pkgs`: Custom packages.
-
-- `users`: Modules for per-user settings.
-
-- `modules`: Home settings.
-
 ### Standalone (for generic linux)
-
-**Can be customized:**
 
 - `flake.nix`: Provides custom packages and home configurations.
   Manages inputs.
@@ -83,12 +64,6 @@ nh home switch
 
 - `inputs.nix`: Which removes `self` from `inputs` in `flake.nix`.
 
-### NixOS Module
-
-**Can be customized:**
-
-- `default.nix`: The entry, only works as nixos module without flake.
-
 ## Deployment
 
 ### Standalone
@@ -103,8 +78,3 @@ Commands:
 nix-shell -p nh
 nh home switch --file ./home-entry.nix homeConfigurations.$USER
 ```
-
-### NixOS Module
-
-Add `imports = [ ./path/to/this/repository ]` into your `configuration.nix`
-and rebuild the NixOS.
