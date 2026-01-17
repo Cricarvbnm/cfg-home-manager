@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   programs.kitty = {
     enable = true;
@@ -15,7 +15,10 @@
     "kitty/kitty-custom.conf".source = config.lib.file.mkOutOfStoreSymlink ./kitty/kitty.conf;
   };
 
-  home.sessionVariables = {
-    TERMINAL = "kitty";
+  home = {
+    sessionVariables = {
+      TERMINAL = "kitty";
+    };
+    packages = with pkgs; [ xdg-terminal-exec ];
   };
 }
