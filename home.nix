@@ -20,6 +20,7 @@
 
   nix = {
     package = pkgs.nix;
+    settings.substituters = [ "https://mirrors.cernet.edu.cn/nix-channels/store" ];
     settings = {
       experimental-features = [
         "flakes"
