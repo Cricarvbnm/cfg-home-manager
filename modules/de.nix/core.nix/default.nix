@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 {
   imports = [
     ./niri.nix
@@ -6,8 +6,6 @@
     ./modules/idle/hypridle.nix
     ./modules/clipboard/copyq.nix
   ];
-
-  xdg.configFile.noctalia.source = config.lib.file.mkOutOfStoreSymlink ./noctalia;
 
   programs.cava.enable = true;
   mine.de.idle = {
