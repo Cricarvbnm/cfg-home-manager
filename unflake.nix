@@ -5,9 +5,9 @@ let
       type = "github";
       owner = "nix-community";
       repo = "home-manager";
-      rev = "c37679d37bdbecf11bbe3c5eb238d89ca4f60641";
-      lastModified = 1769397130;
-      narHash = "sha256-TTM4KV9IHwa181X7afBRbhLJIrgynpDjAXJFMUOWfyU=";
+      rev = "984708c34d3495a518e6ab6b8633469bbca2f77a";
+      lastModified = 1769978395;
+      narHash = "sha256-gj1yP3spUb1vGtaF5qPhshd2j0cg4xf51pklDsIm19Q=";
     };
     unflake_github_nix-systems_default = builtins.fetchTree {
       type = "github";
@@ -21,17 +21,17 @@ let
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
-      rev = "c5296fdd05cfa2c187990dd909864da9658df755";
-      lastModified = 1769170682;
-      narHash = "sha256-oMmN1lVQU0F0W2k6OI3bgdzp2YOHWYUAw79qzDSjenU=";
+      rev = "cb369ef2efd432b3cdf8622b0ffc0a97a02f3137";
+      lastModified = 1770019141;
+      narHash = "sha256-VKS4ZLNx4PNrABoB0L8KUpc1fE7CLpQXQs985tGfaCU=";
     };
     unflake_github_nixos_nixpkgs_ref_nixpkgs-unstable = builtins.fetchTree {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
-      rev = "48698d12cc10555a4f3e3222d9c669b884a49dfe";
-      lastModified = 1769330179;
-      narHash = "sha256-yxgb4AmkVHY5OOBrC79Vv6EVd4QZEotqv+6jcvA212M=";
+      rev = "f08e6b11a5ed43637a8ac444dd44118bc7d273b9";
+      lastModified = 1770015011;
+      narHash = "sha256-7vUo0qWCl/rip+fzr6lcMlz9I0tN/8m7d5Bla/rS2kk=";
     };
     unflake_github_numtide_flake-utils = builtins.fetchTree {
       type = "github";

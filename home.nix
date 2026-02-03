@@ -26,7 +26,6 @@
         "flakes"
         "nix-command"
       ];
-      max-jobs = "auto";
     };
     gc = {
       automatic = true;
