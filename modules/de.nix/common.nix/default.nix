@@ -16,13 +16,24 @@
     wl-clipboard
   ];
 
-  # Screen recording
-  programs.obs-studio = {
-    enable = true;
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-    ];
+  programs = {
+    # Screen recording
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+      ];
+    };
+
+    # Mail
+    thunderbird = {
+      enable = true;
+
+      profiles.default = {
+        isDefault = true;
+      };
+    };
   };
 }
